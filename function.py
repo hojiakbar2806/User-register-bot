@@ -37,13 +37,14 @@ async def send_to_db(update, context):
     context.user_data['step'] = steps["main"]
 
 
-async def main_menu(update, context):
+async def main_menu(update: Update, context: ContextTypes.DEFAULT_TYPE):
     reply_markup = ReplyKeyboardMarkup(
         main_btns,
         one_time_keyboard=True,
         resize_keyboard=True
     )
-    await update.message.reply_text(text="Main menu", reply_markup=reply_markup)
+    await context.bot.send_message(chat_id=update.effective_chat.id, text="Main menu", reply_markup=reply_markup)
+
 
 
 async def send_my_info(update, context):
