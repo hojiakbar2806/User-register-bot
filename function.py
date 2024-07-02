@@ -37,7 +37,7 @@ async def send_to_db(update, context):
     context.user_data['step'] = steps["main"]
 
 
-async def main_menu(update: Update, context: ContextTypes.DEFAULT_TYPE):
+async def main_menu(update, context):
     reply_markup = ReplyKeyboardMarkup(
         main_btns,
         one_time_keyboard=True,
